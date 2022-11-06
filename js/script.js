@@ -9,10 +9,16 @@ var symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 function generatePassword () {
   var activate = document.getElementById("generate");
   var storePW = ""
+  var wrong = "wrong input";
 
   alert("Password must me no less than 8 characters and no more than 128 characters\nPlease be sure to answer all of the question from the prompt to get your new password");
 
-  var length = prompt("Please enter the length of passsword you would like to have./n(min 8 character. max 128 character.")
+  var length = prompt("Please enter the length of passsword you would like to have./n(min 8 character. max 128 character.\n If you type less than 8 character it will automatically adjust to 8 character. \n If you type more than 128 character, it will adjust to 128 character. ");
+  if (+length < 8) {
+    length = 8;
+  }else if (+length > 128) {
+    length = 128;
+  }
 
   var upperCase = prompt("Include upper case? 'Y or N' ");
   if (upperCase === 'Y') {
@@ -30,6 +36,14 @@ function generatePassword () {
   if (specialChar === "Y") {
      storePW += symbols[Math.floor(Math.random() * symbols.length)];
   } 
+
+  for (x = storePW.length; x !== length; x++) {
+    storePW += lettersL[Math.floor(Math.random() * lettersL.length)];
+  }
+
+  
+
+
 
  return storePW;
  
