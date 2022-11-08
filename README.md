@@ -25,3 +25,4 @@ will be generated inside the box above the "generate password button".
 ```
 
 Thank you!
+<img width="1792" alt="Screen Shot 2022-11-07 at 6 11 04 PM" src="https://user-images.githubusercontent.com/99924972/200462897-988e89b1-1f2e-454f-b8d9-77be2acd8f9d.png">
