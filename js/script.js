@@ -9,7 +9,7 @@ var symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 function generatePassword () {
   var activate = document.getElementById("generate");
   var storePW = ""
-  var wrong = "wrong input";
+  
 
   alert("Password must me no less than 8 characters and no more than 128 characters\nPlease be sure to answer all of the question from the prompt to get your new password");
 
@@ -37,15 +37,15 @@ function generatePassword () {
      storePW += symbols[Math.floor(Math.random() * symbols.length)];
   } 
 
-  for (x = storePW.length; x !== length; x++) {
+  for (x = storePW.length; x !== +length; x++) {
     storePW += lettersL[Math.floor(Math.random() * lettersL.length)];
   }
 
-  
+  var shuffled = storePW.split('').sort(function(){return 0.5-Math.random()}).join('');
 
+ return shuffled;
+ 
 
-
- return storePW;
  
 }
 
